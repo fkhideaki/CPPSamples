@@ -8,18 +8,18 @@
 class FileShortcut
 {
 public:
-	static bool Create(
+	static bool create(
 		const WCHAR* srcPath,
 		const WCHAR* lnkPath,
 		const WCHAR* desc);
 
-	static bool Create(
+	static bool create(
 		const WCHAR* srcPath,
 		const WCHAR* lnkPath);
 };
 
 
-bool FileShortcut::Create(
+bool FileShortcut::create(
 	const WCHAR* srcPath,
 	const WCHAR* lnkPath,
 	const WCHAR* desc)
@@ -53,7 +53,7 @@ bool FileShortcut::Create(
 	return true;
 }
 
-bool FileShortcut::Create(
+bool FileShortcut::create(
 	const WCHAR* srcPath,
 	const WCHAR* lnkPath)
 {
