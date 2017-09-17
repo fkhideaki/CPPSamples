@@ -17,11 +17,11 @@ void visitFiles(const char* filter, VisitorFunc visitor)
 	if (hFile == -1L)
 		return;
 
-	for (;;) {
+	do
+	{
 		visitor(c_file.name);
-		if (_findnext(hFile, &c_file) != 0)
-			break;
 	}
+	while (_findnext(hFile, &c_file) == 0);
 
 	_findclose(hFile);
 }
@@ -35,11 +35,11 @@ void getFiles(const char* filter, std::vector<std::string>& files)
 	if (hFile == -1L)
 		return;
 
-	for (;;) {
+	do
+	{
 		files.push_back(c_file.name);
-		if (_findnext(hFile, &c_file) != 0)
-			break;
 	}
+	while (_findnext(hFile, &c_file) == 0);
 
 	_findclose(hFile);
 }
